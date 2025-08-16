@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <ul class="navbar-nav mx-auto" style="text-align: center;">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+</div>
+
+
+
+<head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .cards-container {
+      background-color: #f0f8ff; 
+      padding: 180px; 
+      border-radius: 10px; 
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); 
+      color: #f1f1f1;
+      width: 100%;
+      transition: .5s ease;
+      opacity: 0;
+      color: white;
+      font-size: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-img-container:hover .overlay {
+      opacity: 2;
+    }
+
+    .card-img-container {
+      position: relative;
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: auto;
+    }
+
+  </style>
+
+
+  <title>Exercise 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid p-lg-3 bg-primary text-white text-center fw-bold">
+  <h1>My Porfolio</h1>
+</div>
+  
+<div class="cards-container mx-auto">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card text-center" style="width: 18rem;">
+        <div class="card-img-container">
+         <img class="card-img-top" src="P1.png" alt="Card image cap">
+         <div class="overlay">Python</div>
+         </div>
+         <div class="card-body">
+            <h5 class="card-title" onclick="TitleClick()">Forming Different Shapes</h5>
+            <p class="card-text">A Python creation made for a project.</p>
+            <a href="#" class="btn btn-primary" onclick="LearnMore1()">Learn More</a>
+         </div>
+        </div>
+      </div>
+
+  <div class="col-sm-4">
+    <div class="card text-center" style="width: 18rem;">
+      <div class="card-img-container">
+      <img class="card-img-top" src="P2.png" alt="Card image cap">
+        <div class="overlay">Python</div>
+        </div>
+      <div class="card-body">
+        <h5 class="card-title" onclick="TitleClick()">House Landscape</h5>
+        <p class="card-text">A Python creation made for a project.</p>
+        <a href="#" class="btn btn-primary" onclick="LearnMore2()">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-sm-4">
+    <div class="card text-center" style="width: 18rem;">
+      <div class="card-img-container">
+      <img class="card-img-top" src="P3.png" alt="Card image cap">
+        <div class="overlay">Unity</div>
+        </div>
+      <div class="card-body">
+        <h5 class="card-title" onclick="TitleClick()">Prototype Flapping Bird</h5>
+        <p class="card-text">A Unity game uploaded for a project.</p>
+        <a href="#" class="btn btn-primary" onclick="LearnMore3()">Learn More</a>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-5">
+    <div class="card border-info mb-3" style="padding-bottom: 50px">
+    <h1 class="text-center">Contact Me</h1>
+    <form action="#" method="POST" onsubmit="return SendMessage()">
+
+
+      <div class="mx-auto">
+        <label for="name" class="form-label card text-center">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="mx-auto" style="padding-top: 40px">
+        <label for="email" class="form-label card text-center">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="mx-auto" style="padding-top: 40px">
+        <label for="message" class="form-label card text-center">Your Message</label>
+        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+      </div>
+
+
+      <div class="text-center" style="padding-top: 40px">
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+  </div>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+
+
+  function TitleClick() 
+  {
+    let Color = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+    
+    $('.cards-container').fadeTo(500, 0.5, function() {
+        $(this).css('background-color', Color).fadeTo(500, 1);
+    });
+  }
+
+  function LearnMore1()
+  {
+    alert("A creation where I made various different shapes, as well as switching between different audio files while using Python. \n \nThe shapes here were made by the turtle movement, and it changes color throughout the different shapes too. I did end up using some royalty free audio for this project. \n \n Yeah, I don't know what these shapes look like either.");
+  }
+
+  function LearnMore2()
+  {
+    alert("Another Python Project. \n \nSimilarly to the previous project, I made the turtle form shapes to resemble a house landscape, along with some other decorations that were added to clear up some of the empty space. \n \nThis has used circles for the majority of the drawing, mainly at the near bottom to help it feel more colorful, or to make it look like a paint palette or colored rocks.");
+  }
+
+  function LearnMore3()
+  {
+    alert("This project is a game made in Unity. \n \nThis was one of the first Unity project I ended up making, so it's gameplay is identical to that of Flappy Bird. This project does use button and collision triggers, a score system, and a particle system to pass by the scene to vision clouds passing by.");
+  }
+
+ 
+  function SendMessage()
+  { 
+    alert("Message Sent! Thank you for contacting.");
+    return true;
+  }
+
+  </script>
+
+</body>
+
+
+
+
+
+</html>
+
